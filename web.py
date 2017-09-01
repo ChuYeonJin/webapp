@@ -5,8 +5,7 @@ app = Flask(__name__)
 
 GPIO.setmode(GPIO.BCM)
 
-LED1 = 23
-LED2 = 25
+LED1 = 15
 
 GPIO.setup(LED1, GPIO.OUT, initial=GPIO.LOW)
 GPIO.setup(LED2, GPIO.OUT, initial=GPIO.LOW)
@@ -27,4 +26,4 @@ def led():
             return "LED OFF"
 
 if __name__ == "__main__":
-    app.run(host='192.168.0.126', port=8889, debug=True)
+    app.run(host='192.168.0.126', port=9209, debug=True)
