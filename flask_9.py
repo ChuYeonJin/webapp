@@ -5,15 +5,15 @@ app = Flask(__name__) #make instance
 
 Articles = Articles()
 
-@app.routo('/')
+@app.route('/')
 def index():
     return 'hi dictionary'
 
-@app.routo('/articles')
+@app.route('/articles')
 def articles():
     return render_template('articles.html', articles=Articles)
 
-@app.routo('/article/<int:id>')
+@app.route('/article/<int:id>')
 def article(id):
     return render_template('article.html', id=id, articles = Articles)
 
