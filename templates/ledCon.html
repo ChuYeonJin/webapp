@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+	
+	function ledCon(check){
+
+		$.ajax({
+			method:"GET",
+			url: "led?led=" + check,
+			success: function(temp){
+				
+			},
+			error: function(){
+			}
+		});
+
+	}
+
+</script>
+<title>LED CONTROLLER</title>
+</head>
+	<body>
+		<span>
+			<input onclick="ledCon('on');" type="button" value="LED ON" />
+			<input onclick="ledCon('off');" type="button" value="LED OFF" />
+		</span>
+	</body>
+</html>
