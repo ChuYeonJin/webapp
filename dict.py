@@ -1,3 +1,4 @@
+#coding : utf-8
 def Articles():
     articles = [
         { 'id' : 1,
@@ -13,7 +14,7 @@ def Articles():
         {'id': 3,
          'title': 'Article Three',
          'body': 'Hello Dic',
-         'author': 'jin',
+         'author': '진',
          'create_date': '04-09-2017'}
     ]
     return articles
