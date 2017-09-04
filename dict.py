@@ -14,7 +14,7 @@ def Articles():
         {'id': 3,
          'title': 'Article Three',
          'body': 'Hello Dic',
-         'author': '진',
+         'author': u'진',
          'create_date': '04-09-2017'}
     ]
     return articles
