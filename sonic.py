@@ -10,6 +10,8 @@ GPIO_TRIGGER = 24
 GPIO_ECHO = 23
 
 GPIO.setup(LED, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
+GPIO.setup(GPIO_ECHO, GPIO.IN)
 
 def distance():
     # set Trigger to HIGH
