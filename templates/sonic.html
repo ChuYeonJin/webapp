@@ -11,7 +11,7 @@
 			async : false,
 			dataType : "json",
 			seccess:function(data){
-				alert(data);
+				alert('test');
 				tem = data.result;
 			},
 			error:function(error){
@@ -19,7 +19,7 @@
 			}
 		});
 		document.write(tem);
-
+		alert("test : " + tem);
 	}
 
 	setInterval(sonic, 3000);
