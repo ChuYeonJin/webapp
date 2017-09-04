@@ -4,16 +4,6 @@ import time
 
 app = Flask(__name__)
 
-# GPIO Mode (BOARD / BCM)
-GPIO.setmode(GPIO.BCM)
-
-# set GPIO Pins
-LED = 15
-GPIO_TRIGGER = 24
-GPIO_ECHO = 23
-
-GPIO.setup(LED, GPIO.OUT, initial=GPIO.LOW)
-
 from sonic import distance
 
 @app.route("/")

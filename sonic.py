@@ -1,3 +1,16 @@
+import RPi.GPIO as GPIO
+import time
+
+# GPIO Mode (BOARD / BCM)
+GPIO.setmode(GPIO.BCM)
+
+# set GPIO Pins
+LED = 15
+GPIO_TRIGGER = 24
+GPIO_ECHO = 23
+
+GPIO.setup(LED, GPIO.OUT, initial=GPIO.LOW)
+
 def distance():
     # set Trigger to HIGH
     GPIO.output(GPIO_TRIGGER, True)
