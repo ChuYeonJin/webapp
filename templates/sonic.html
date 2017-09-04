@@ -1,0 +1,29 @@
+<html>
+<haed>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+	var tem;
+
+	function sonic(){
+		$.ajax({
+			type : "GET",
+			url : "/ajax",
+			async : false,
+			dataType : "json",
+			seccess:function(data){
+				tem = data.result;
+			},
+			error:function(error){
+
+			}
+		});
+		document.write(tem);
+
+		setinterval(sonic, 3000);
+	}
+
+
+
+</script>
+</haed>
+</html>
