@@ -14,4 +14,4 @@ def bacon():
         return 'You are probably using GET'
 
 if __name__ == "__main__":
-    app.run(debut=True, host='0.0.0.0', port=9209)
+    app.run(debug=True, host='0.0.0.0', port=9209)
