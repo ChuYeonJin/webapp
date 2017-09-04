@@ -1,5 +1,13 @@
 <html>
 <body>
-	<p>Hello World</p>
+	<h1>Articles</h1>
+	<ul>
+		{% for item in articles %}
+			<li>
+				<a href="article/{{item.id}}"/>
+				{{item.title}}
+			</li>
+		{% endfor %}
+	</ul>
 </body>
 </html>
