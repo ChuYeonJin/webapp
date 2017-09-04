@@ -11,7 +11,8 @@
 			async : false,
 			dataType : "json",
 			seccess:function(data){
-				tem = data;
+				tem = data.result;
+				alert(tem);
 			},
 			error:function(error){
 
@@ -19,10 +20,9 @@
 		});
 		document.write(tem);
 
-		setInterval(sonic, 3000);
 	}
 
-	sonic();
+	setInterval(sonic, 3000);
 </script>
 </haed>
 </html>
