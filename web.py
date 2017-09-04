@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 import time
-from flask import Flask, request
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
