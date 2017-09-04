@@ -12,7 +12,7 @@ def index():
 @app.route("/ajax")
 def ajax():
     result = distance()
-    return jsonify(result = result)
+    return jsonify(result=result)
 
 if __name__ == "__main__":
 	try:
