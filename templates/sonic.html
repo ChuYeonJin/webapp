@@ -13,11 +13,11 @@
 			success: function(temp){
 				tem = temp.result;
 			},
-			error:function(error){
-
+			error:function(err){
+				console.log(err);
 			}
 		});
-		document.write(tem);
+		document.write(tem + "\n");
 	}
 
 	setInterval(sonic, 3000);
