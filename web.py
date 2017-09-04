@@ -12,7 +12,7 @@ GPIO.setup(LED1, GPIO.OUT, initial=GPIO.LOW)
 
 @app.route("/")
 def hello():
-    return render_template("ledCon.html")
+    return render_template('ledCon.html')
 
 @app.route("/led", methods=['GET'])
 def led():
