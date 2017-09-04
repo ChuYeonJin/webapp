@@ -1,6 +1,5 @@
 import RPi.GPIO as GPIO
 from flask import Flask, request, jsonify, render_template
-from sonic import distance
 import time
 
 app = Flask(__name__)
@@ -14,6 +13,8 @@ GPIO_TRIGGER = 24
 GPIO_ECHO = 23
 
 GPIO.setup(LED, GPIO.OUT, initial=GPIO.LOW)
+
+from sonic import distance
 
 @app.route("/")
 def index():
