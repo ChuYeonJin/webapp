@@ -10,16 +10,14 @@
 			url : "/ajax",
 			async : false,
 			dataType : "json",
-			seccess:function(data){
-				alert('test');
-				tem = data.result;
+			success: function(temp){
+				alert('temp : ' + temp);
 			},
 			error:function(error){
 
 			}
 		});
 		document.write(tem);
-		alert("test : " + tem);
 	}
 
 	setInterval(sonic, 3000);
