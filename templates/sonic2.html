@@ -1,0 +1,33 @@
+<html>
+<haed>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+	var tem;
+	var time;
+
+	function sonic(){
+		$.ajax({
+			type : "GET",
+			url : "/ajax",
+			async : false,
+			dataType : "json",
+			success: function(temp){
+				tem = temp.result;
+				time = temp.time;
+			},
+			error:function(err){
+				console.log(err);
+			}
+		});
+		document.frm.result.value = time + " -> 거리 : "+ tem;
+	}
+
+	setInterval(sonic, 3000);
+</script>
+</haed>
+<body>
+	<form name = "frm">
+		<input type="text" size="50" name="result">
+	</form>
+</body>
+</html>
