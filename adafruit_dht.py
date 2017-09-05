@@ -1,7 +1,7 @@
 import Adafruit_DHT
 import sys
 
-ensor_args = { '11': Adafruit_DHT.DHT11,
+sensor_args = { '11': Adafruit_DHT.DHT11,
                 '22': Adafruit_DHT.DHT22,
                 '2302': Adafruit_DHT.AM2302 }
 if len(sys.argv) == 3 and sys.argv[1] in sensor_args:
