@@ -27,7 +27,7 @@ if __name__ == "__main__":
             param = [humidity, temperature]
 
             for i in range(0, 2):
-                params = urllib.urlencode({'field'+i : param[i], 'key': KEY})
+                params = urllib.urlencode({'field'+str(i) : param[i], 'key': KEY})
                 conn = httplib.HTTPConnection("api.thingspeak.com:80")
 
                 try:
