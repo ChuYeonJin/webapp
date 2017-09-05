@@ -7,12 +7,12 @@ from sonic import distance
 
 @app.route("/")
 def index():
-    return render_template('sonic.html')
+    return render_template('sonic2.html')
 
 @app.route("/ajax")
 def ajax():
     result = distance()
-    return jsonify(result=result, time=time)
+    return jsonify(result=result, curr_time=time.time())
 
 if __name__ == "__main__":
 	try:
