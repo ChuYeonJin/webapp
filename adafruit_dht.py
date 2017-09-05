@@ -27,13 +27,13 @@ if __name__ == "__main__":
             param = [temperature, humidity]
 
             for i in range(0, 2):
-                params = urllib.urlencode({'field'+str(i) : param[i], 'key': KEY})
+                params = urllib.urlencode({'field'+str(i+1) : param[i], 'key': KEY})
                 conn = httplib.HTTPConnection("api.thingspeak.com:80")
 
                 try:
                     conn.request("POST", "/update", params, headers)
                     response = conn.getresponse()
-                    print i, " : ", param[i], response.status, response.reason
+                    print "field%d" %(i+1), " : ", param[i], response.status, response.reason
                 except:
                     print "Connection Failed"
             time.sleep(ti)
