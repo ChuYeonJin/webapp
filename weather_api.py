@@ -22,6 +22,6 @@ def weater(appKey, lan, lon):
     try:
         conn.request("GET", headers)
         response = conn.getresponse()
-        print response
+        print (response)
     except:
         print ("Connection Failed")
