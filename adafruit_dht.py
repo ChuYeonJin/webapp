@@ -24,29 +24,18 @@ if __name__ == "__main__":
         while True:
 
             humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
-            param = [temperature, humidity]
 
-            # params = urllib.urlencode({'field2': humidity, 'key': KEY})
-            # conn = httplib.HTTPConnection("api.thingspeak.com:80")
-            #
-            # try:
-            #     conn.request("POST", "/update", params, headers)
-            #     response = conn.getresponse()
-            #     print "field2" , " : ", humidity, response.status, response.reason
-            # except:
-            #     print "Connection Failed"
+            params = urllib.urlencode({'field1': temperature, 'field2': humidity, 'key': KEY})
+            conn = httplib.HTTPConnection("api.thingspeak.com:80")
 
+            try:
+                conn.request("POST", "/update", params, headers)
+                response = conn.getresponse()
+                print "field1" , " : ", temperature, response.status, response.reason
+                print "field2", " : ", humidity, response.status, response.reason
+            except:
+                print "Connection Failed"
 
-            for i in range(0, 2):
-                params = urllib.urlencode({'field%d'%(i+1) : param[i], 'key': KEY})
-                conn = httplib.HTTPConnection("api.thingspeak.com:80")
-
-                try:
-                    conn.request("POST", "/update", params, headers)
-                    response = conn.getresponse()
-                    print "field%d" %(i+1), " : ", param[i], response.status, response.reason
-                except:
-                    print "Connection Failed"
             time.sleep(ti)
 
     except KeyboardInterrupt:
