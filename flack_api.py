@@ -1,5 +1,5 @@
 # coding:utf-8
-from sonic import distance
+import sonic
 import time
 import httplib, urllib
 
@@ -25,4 +25,4 @@ if __name__ == "__main__":
 			time.sleep(ti)
 
 	except KeyboardInterrupt:
-		GPIO.cleanup()
+		sonic.GPIO.cleanup()
