@@ -1,5 +1,12 @@
 import Adafruit_DHT
 import sys
+import time
+import httplib, urllib
+
+KEY = "GWD38ZF2B9G2MK0G"
+headers = {"Content-type" : "application/x-www-form-urlencoded", "Accept" : "text/plain"}
+
+ti = 10
 
 sensor_args = { '11': Adafruit_DHT.DHT11,
                 '22': Adafruit_DHT.DHT22,
@@ -12,12 +19,26 @@ else:
     print('example: sudo ./Adafruit_DHT.py 2302 4 - Read from an AM2302 connected to GPIO #4')
     sys.exit(1)
 
-humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
+if __name__ == "__main__":
+    try:
+        while True:
 
-print humidity
+            humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
 
-if humidity is not None and temperature is not None:
-    print('Temp={0:0.1f}*C  Humidity={1:0.1f}%'.format(temperature, humidity))
-else:
-    print('Failed to get reading. Try again!')
-    sys.exit(1)
+            params1 = urllib.urlencode({'field1': temperature, 'key': KEY})
+            params2 = urllib.urlencode({'field2': humidity, 'key': KEY})
+            conn = httplib.HTTPConnection("api.thingspeak.com:80")
+
+            try:
+                conn.request("POST", "/update", params1, headers)
+                response1 = conn.getresponse()
+                conn.request("POST", "/update", params1, headers)
+                response2 = conn.getresponse()
+                print response1.status, response1.reason
+                print response2.status, response2.reason
+            except:
+                print "Connection Failed"
+            time.sleep(ti)
+
+    except KeyboardInterrupt:
+        sys.exit(1)
