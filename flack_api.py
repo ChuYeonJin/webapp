@@ -10,7 +10,7 @@ ti = 10
 if __name__ == "__main__":
 	try:
 		while True:
-			dist = distance()
+			dist = sonic.distance()
 			if dist > 3000:
 				continue
 
