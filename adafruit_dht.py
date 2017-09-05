@@ -24,7 +24,7 @@ if __name__ == "__main__":
         while True:
 
             humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
-            param = [humidity, temperature]
+            param = [temperature, humidity]
 
             for i in range(0, 2):
                 params = urllib.urlencode({'field'+str(i) : param[i], 'key': KEY})
@@ -33,7 +33,7 @@ if __name__ == "__main__":
                 try:
                     conn.request("POST", "/update", params, headers)
                     response = conn.getresponse()
-                    print i, " : ", response.status, response.reason
+                    print i, " : ", param[i], response.status, response.reason
                 except:
                     print "Connection Failed"
             time.sleep(ti)
