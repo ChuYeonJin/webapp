@@ -13,7 +13,7 @@ def index():
 @app.route("/ajax")
 def ajax():
     result = distance()
-    return jsonify(result=result, curr_time=u(time.strftime("%Y년 %m월 %d일 / %H : %M")))
+    return jsonify(result=result, curr_time=time.strftime(u"%Y년 %m월 %d일 / %H : %M"))
 
 if __name__ == "__main__":
 	try:
