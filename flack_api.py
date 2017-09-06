@@ -19,9 +19,9 @@ if __name__ == "__main__":
 			try:
 				conn.request("POST", "/update", params, headers)
 				response = conn.getresponse()
-				print response.status, response.reason
+				print (response.status, response.reason)
 			except :
-				print "Connection Failed"
+				print ("Connection Failed")
 			time.sleep(ti)
 
 	except KeyboardInterrupt:
