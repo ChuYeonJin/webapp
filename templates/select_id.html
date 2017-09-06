@@ -1,0 +1,17 @@
+<!doctype html>
+<table border>
+<tr>
+<th> No </th>
+<th> Name </th>
+<th> Phone </th>
+</tr>
+{% for item in data: %}
+	<tr>
+		{% for col in item: %}
+			<td>
+				{{col}}
+			</td>
+		{% endfor %}
+	</tr>
+{% endfor %}
+</table>
