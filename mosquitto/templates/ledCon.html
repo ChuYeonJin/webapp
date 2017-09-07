@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+	
+	function ledCon(check){
+
+		$.ajax({
+			method:"GET",
+			url: "LED/"+ check,
+			success: function(temp){
+				var state = document.getElementById("led_state")
+				if(temp == "LED ON"){
+					state.style.color = "green";
+				}else{
+					state.style.color = "red";
+				}
+			},
+			error: function(){
+			}
+		});
+
+	}
+
+</script>
+<title>LED CONTROLLER</title>
+</head>
+	<body>
+		<span>
+			<div id = "led_state" style="width:50px;height:50px;background-color:red;"></div>
+			<input onclick="ledCon('ON');" type="button"  value="LED ON"/>
+			<input onclick="ledCon('OFF');" type="button" value="LED OFF"/>
+		</span>
+	</body>
+</html>

@@ -1,6 +1,6 @@
-import paho.mqtt.client as mqtt
 import RPi.GPIO as GPIO
 import time
+import os
 
 # GPIO Mode (BOARD / BCM)
 GPIO.setmode(GPIO.BCM)
@@ -13,10 +13,6 @@ GPIO_ECHO = 23
 GPIO.setup(LED, GPIO.OUT, initial=GPIO.LOW)
 GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
 GPIO.setup(GPIO_ECHO, GPIO.IN)
-
-def on_connect(client, userdata, flags, rc):
-    print("Con : " + str(rc))
-    client.subscribe("test")
 
 def distance():
     # set Trigger to HIGH
@@ -46,13 +42,6 @@ def distance():
  
     return distance
 
-broker = "192.168.0.126"
-port = 1883
-
-# mqtt setting
-client = mqtt.Client()
-client.connect(broker, port)
-
 led_state = "LEDOFF"
 
 try:
@@ -62,14 +51,14 @@ try:
 
         if dist <= 10:
             if led_state == "LEDOFF":
-                client.publish("test", "LEDON")
+                os.system("curl http://192.168.0.126:9209/LED/ON")
                 led_state = "LEDON"
 
         elif dist > 3000:
             continue
         else:
             if led_state == "LEDON":
-                client.publish("test", "LEDOFF")
+                os.system("curl http://192.168.0.126:9209/LED/OFF")
                 led_state = "LEDOFF"
 
         time.sleep(1)

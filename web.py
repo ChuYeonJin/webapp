@@ -27,7 +27,7 @@ def led():
 
 if __name__ == "__main__":
 	try:
-		 app.run(host='192.168.0.126', port=9209, debug=True)
+		 app.run(host='192.168.0.226', port=9209, debug=True)
 
 	except KeyboardInterrupt:
 		GPIO.cleanup()
