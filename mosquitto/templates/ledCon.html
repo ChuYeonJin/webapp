@@ -12,9 +12,9 @@
 			success: function(temp){
 				var state = document.getElementById("led_state")
 				if(temp == "LED ON"){
-					state.style.color = "green";
+					state.style.backgroundColor = "green";
 				}else{
-					state.style.color = "red";
+					state.style.backgroundColor = "red";
 				}
 			},
 			error: function(){
