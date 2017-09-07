@@ -12,9 +12,9 @@ def on_connect(client, userdata, flags, rc):
 def on_message(client, userdata, msg):
     strMsg = str(msg.payload)
     print(msg.topic + " : " + strMsg)
-    if(strMsg == "b'LEDON'"):
+    if(strMsg == "LEDON"):
         GPIO.output(10, GPIO.HIGH)
-    elif(strMsg == "b'LEDOFF'"):
+    elif(strMsg == "LEDOFF"):
         GPIO.output(10, GPIO.LOW)
 
 client = mqtt.Client()
