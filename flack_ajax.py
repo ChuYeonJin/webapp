@@ -1,9 +1,7 @@
 from flask import Flask, request, jsonify, render_template
-
+import sonic
 
 app = Flask(__name__)
-
-from sonic import distance
 
 @app.route("/")
 def index():
@@ -11,7 +9,7 @@ def index():
 
 @app.route("/ajax")
 def ajax():
-    result = distance()
+    result = sonic.distance()
     return jsonify(result=result)
 
 if __name__ == "__main__":
@@ -19,4 +17,4 @@ if __name__ == "__main__":
 		 app.run(host='192.168.0.126', port=9209, debug=True)
 
 	except KeyboardInterrupt:
-		GPIO.cleanup()
+		sonic.GPIO.cleanup()
