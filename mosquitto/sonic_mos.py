@@ -53,15 +53,21 @@ port = 1883
 client = mqtt.Client()
 client.connect(broker, port)
 
+led_state = "LEDOFF"
+
 try:
     while True:
         dist = distance()
         if dist <= 10:
-            client.publish("test", "LEDON")
+            if led_state == "LEDOFF":
+                client.publish("test", "LEDON")
+                led_state = "LEDON"
         elif dist > 3000:
             continue
         else:
-            client.publish("test", "LEDOFF")
+            if led_state == "LEDON":
+                client.publish("test", "LEDOFF")
+                led_state = "LEDOFF"
         time.sleep(1)
 
 except KeyboardInterrupt :
