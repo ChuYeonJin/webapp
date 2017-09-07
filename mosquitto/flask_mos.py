@@ -14,12 +14,12 @@ client.connect(broker, port)
 def index():
     return render_template('ledCon.html')
 
-@app.route("LED/ON")
+@app.route("/LED/ON")
 def led_on():
 	client.publish("test", "LEDON")
 	return "LED ON"
 
-@app.route("LED/OFF")
+@app.route("/LED/OFF")
 def led_off():
 	client.publish("test", "LEDOFF")
 	return "LED OFF"
