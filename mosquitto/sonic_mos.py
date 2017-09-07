@@ -58,16 +58,20 @@ led_state = "LEDOFF"
 try:
     while True:
         dist = distance()
+        global led_state
+
         if dist <= 10:
             if led_state == "LEDOFF":
                 client.publish("test", "LEDON")
                 led_state = "LEDON"
+
         elif dist > 3000:
             continue
         else:
             if led_state == "LEDON":
                 client.publish("test", "LEDOFF")
                 led_state = "LEDOFF"
+
         time.sleep(1)
 
 except KeyboardInterrupt :
