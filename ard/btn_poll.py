@@ -7,7 +7,7 @@ GPIO.setup(18,GPIO.IN)
 cnt = 0
 
 while True:
-    value = GPIO.input(24)
+    value = GPIO.input(18)
     if value == True:
         count = count + 1
         print (cnt)
