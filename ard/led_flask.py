@@ -39,4 +39,4 @@ def action(changePin, action):
     return render_template('main.html', **templateData)
 
 if __name__ == "__main__":
-    app.run(host='192.168.0.126', port=8888, debut = True)
+    app.run(host='192.168.0.126', port=8888, debug = True)
