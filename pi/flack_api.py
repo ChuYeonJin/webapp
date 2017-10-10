@@ -1,7 +1,9 @@
 # coding:utf-8
-import sonic
+import httplib
 import time
-import httplib, urllib
+import urllib
+
+import sonic
 
 KEY = "GWD38ZF2B9G2MK0G"
 headers = {"Content-type" : "application/x-www-form-urlencoded", "Accept" : "text/plain"}
