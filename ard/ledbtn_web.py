@@ -43,4 +43,4 @@ def index(led = "n"):
     state = GPIO.input(button)
     return template(controll_page, btnState=state, led0=0, led1=1)
 
-run(host='127.0.0.1', port='8888')
+run(host='192.168.0.126', port='8888')
