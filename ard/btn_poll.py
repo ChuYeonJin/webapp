@@ -9,7 +9,7 @@ cnt = 0
 while True:
     value = GPIO.input(18)
     if value == True:
-        count = count + 1
+        cnt = cnt + 1
         print (cnt)
 
     time.sleep(0.1)
