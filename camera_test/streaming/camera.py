@@ -43,3 +43,5 @@ class Camera(object):
                     break
 
             cls.thread = None
+            print("Camera :", Camera.frame)
+            print("self :", cls.frame)
