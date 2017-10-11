@@ -1,7 +1,7 @@
 # coding: utf-8
 
 import picamera
-import tkinter
+import Tkinter as tkinter
 
 def cap_img():
     if res.get() == 3:
