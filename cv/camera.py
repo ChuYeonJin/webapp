@@ -6,6 +6,7 @@ cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)
 
 while True:
     ret,img = cam.read()
+    print(img)
     cv2.imshow('Video Capture', img)
     key = cv2.waitKey(10)
 
