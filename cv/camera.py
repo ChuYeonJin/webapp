@@ -4,9 +4,10 @@ cam = cv2.VideoCapture(0)
 cam.set(cv2.CAP_PROP_FRAME_WIDTH, 320)
 cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)
 
+print(cam)
+
 while True:
     ret,img = cam.read()
-    print(img)
     cv2.imshow('Video Capture', img)
     key = cv2.waitKey(10)
 
