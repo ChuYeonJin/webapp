@@ -1,29 +1,23 @@
-import numpy as np
-import cv2
+import cv2, time
 
-# Capture video from file
-cap = cv2.VideoCapture('solidWhiteRightVideo.mp4')
+video=cv2.VideoCapture(0)
 
+d=0
 while True:
-    # 영상 읽기
-    ret, frame = cap.read()
-    # ret : 영상이 정상적으로 읽힌 경우 true, 그렇지 않으면 false
-    # frame : 불러온 영상 저장 버퍼
+    d += 1
+    check, frame = video.read()
 
-    if ret:
-        # 흑백 이미지로 변환
-        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    print(check)
+    print(frame)
 
-        # 영상 출력
-        cv2.imshow('frame',gray)
+    cv2.imshow("capturing",frame)
 
-        if cv2.waitKey(10) & 0xFF == ord('q'):
-            break
+    key = cv2.waitKey(1)
 
-    else:
+    if key==ord('q'):
         break
 
-# Release
-cap.release()
-cv2.destroyAllWindows()
+video.release()
+cv2.destroyAllWindows
 
+print(d)
