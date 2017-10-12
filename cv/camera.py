@@ -1,4 +1,5 @@
 import cv2
+import time
 
 cam = cv2.VideoCapture(0)
 
@@ -6,6 +7,8 @@ cam.set(cv2.CAP_PROP_FRAME_WIDTH, 320)
 cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)
 # cam.set(3, 360)
 # cam.set(4, 240)
+
+time.sleep(1)
 
 while True:
     ret,img = cam.read()
