@@ -2,17 +2,17 @@ import cv2
 
 cam = cv2.VideoCapture(0)
 
-# cam.set(cv2.CAP_PROP_FRAME_WIDTH, 320)
-# cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)
-cam.set(3, 360)
-cam.set(4, 240)
+cam.set(cv2.CAP_PROP_FRAME_WIDTH, 320)
+cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)
+# cam.set(3, 360)
+# cam.set(4, 240)
 
 while True:
     ret,img = cam.read()
     print(ret)
     print(img)
 
-    # cv2.imshow('Video Capture', img)
+    cv2.imshow('Video Capture', img)
     key = cv2.waitKey(10)
 
     if key == 27:
