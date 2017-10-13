@@ -33,8 +33,8 @@ if __name__ == '__main__':
     nested = cv2.CascadeClassifier(nested_fn)
 
     cam = cv2.VideoCapture(0)
-    cam.set(cv2.CAP_PROP_FRAME_WIDTH, 320)
-    cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)
+    cam.set(cv2.CAP_PROP_FRAME_WIDTH, 700)
+    cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 700)
     while True:
         ret, img = cam.read()
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
