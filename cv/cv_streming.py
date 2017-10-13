@@ -21,6 +21,6 @@ def do_stream():
 
 @route('/')
 def do_route():
-    return "<HTML><BODY><img src=\"stream\" width=320 height=240></BODY></HTML>"
+    return "<HTML><BODY><img src='stream' width=320 height=240></BODY></HTML>"
 
 run(host='192.168.0.126', port=8080)
