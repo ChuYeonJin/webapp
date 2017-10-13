@@ -22,7 +22,7 @@ while True:
     if(count > 1):
         nz = np.nonzero(thrimg)
         cv2.rectangle(diff, (min(nz[1]), min(nz[0])), (max(nz[1]), max(nz[0])), (255, 0, 0), 2)
-        cv2.rectangle(diff, (min(nz[1]), min(nz[0])), (max(nz[1]), max(nz[0])), (0, 0, 255), 2)
+        cv2.rectangle(img, (min(nz[1]), min(nz[0])), (max(nz[1]), max(nz[0])), (0, 0, 255), 2)
         cv2.imwrite('capture.jpg', img)
 
     cv2.imshow('Detecting Motion', diff)
