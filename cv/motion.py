@@ -9,11 +9,11 @@ def diffImage(i0, i1, i2):
 thresh = 32
 cam = cv2.VideoCapture(0)
 img = cam.read()[1]
-i0 = cv2.cvtColor(img, cv2.COLOR_BAYER_BG2GRAY)
+i0 = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
 img = cam.read()[1]
-i1 = cv2.cvtColor(img, cv2.COLOR_BAYER_BG2GRAY)
+i1 = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
 img = cam.read()[1]
-i2 = cv2.cvtColor(img, cv2.COLOR_BAYER_BG2GRAY)
+i2 = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
 
 while True:
     diff = diffImage(i0, i1, i2)
