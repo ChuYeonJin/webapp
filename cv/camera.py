@@ -1,8 +1,5 @@
 import cv2
 import time
-import sys
-
-
 
 cam = cv2.VideoCapture(0)
 
