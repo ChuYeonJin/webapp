@@ -30,7 +30,7 @@ while True:
     i0 = i1
     i1 = i2
     img = cam.read()[1]
-    i2 = cv2.cvtColor(img, cv2.COLOR_BAYER_BG2GRAY)
+    i2 = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
 
     key = cv2.waitKey(10)
     if key == 27:
