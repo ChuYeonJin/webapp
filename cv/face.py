@@ -6,7 +6,9 @@ import cv2
 def clock():
     return cv2.getTickCount() / cv2.getTickFrequency()
 
-def draw_str(dst, (x, y), s):
+def draw_str(dst, tup, s):
+    x = tup[0]
+    y = tup[1]
     cv2.putText(dst, s, (x+1, y+1), cv2.FONT_HERSHEY_PLAIN, 1.0, (0, 0, 0), thickness = 2, lineType=cv2.CV_AA)
     cv2.putText(dst, s, (x, y), cv2.FONT_HERSHEY_PLAIN, 1.0, (255, 255, 255), lineType=cv2.LINE_AA)
 
@@ -47,8 +49,8 @@ if __name__ == '__main__':
             subrects = detect(roi.copy(), nested)
             draw_rects(vis_roi, subrects, (255, 0, 0))
         dt = clock() - t
-
-        draw_str(vis, (20, 20), 'time: %.1f ms' % (dt * 1000))
+        tup = (20, 20)
+        draw_str(vis, tup, 'time: %.1f ms' % (dt * 1000))
         cv2.imshow('facedetect', vis)
 
         if 0xFF & cv2.waitKey(5) == 27:
