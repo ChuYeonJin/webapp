@@ -35,8 +35,8 @@ if __name__ == '__main__':
     profile = cv2.CascadeClassifier(profile_fn)
 
     cam = cv2.VideoCapture(0)
-    cam.set(cv2.CAP_PROP_FRAME_WIDTH, 600)
-    cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 600)
+    cam.set(cv2.CAP_PROP_FRAME_WIDTH, 400)
+    cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 400)
     while True:
         ret, img = cam.read()
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
