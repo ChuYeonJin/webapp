@@ -8,7 +8,7 @@ import motion
 smtp_server = "smtp.gmail.com"
 port = 587
 portssl = 465
-userid = "kiru923@gmail.com"
+userid = "kiru923"
 passwd = "a24a585e"
 
 def sendMail(image):
